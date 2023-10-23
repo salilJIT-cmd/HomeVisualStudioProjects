@@ -1,0 +1,7 @@
+C:\Users\sahil\source\repos\Hello\Hello\bin\Release\Hello.exe.config
+C:\Users\sahil\source\repos\Hello\Hello\bin\Release\Hello.exe
+C:\Users\sahil\source\repos\Hello\Hello\bin\Release\Hello.pdb
+C:\Users\sahil\source\repos\Hello\Hello\obj\Release\Hello.csproj.AssemblyReference.cache
+C:\Users\sahil\source\repos\Hello\Hello\obj\Release\Hello.csproj.CoreCompileInputs.cache
+C:\Users\sahil\source\repos\Hello\Hello\obj\Release\Hello.exe
+C:\Users\sahil\source\repos\Hello\Hello\obj\Release\Hello.pdb

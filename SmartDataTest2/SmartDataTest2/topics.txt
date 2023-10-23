@@ -1,0 +1,22 @@
+﻿1. SQL
+--> CRUD Operations
+--> Constraints
+--> Clauses
+--> Functions (including date)
+--> Joins
+--> GroupBY
+--> Stored Procedures
+
+
+2. DotNet
+--> Delegates
+--> Extension Methods
+--> Tuples
+--> Linq
+--> Collection (CRUD, IComparable)
+--> String Operations
+--> Entity Framework
+	-> Modify Schema
+	-> CRUD, Joins
+	-> FluentAPI
+	-> RelationShips

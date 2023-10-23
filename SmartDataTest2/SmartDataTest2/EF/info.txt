@@ -1,0 +1,22 @@
+1. Install 2 packages from NuGet
+--> EFCore.tools
+--> EFCore.SqlServer
+
+2. Create a class for table schema(see ./BasicCrud/EmployeeModel.cs)
+
+3. Create a DbContext class where the tables will be created and connection string is passed
+(see ./BasicCrud/MyDbContext.cs)
+
+4. Run these two commands in Package Manager Console
+--> Add-Migration "relevant message"
+--> Update-Database (to migrate changes to the database)
+
+5. If there are multiple DbContext files in the project, use these commands
+--> Add-Migration "relevant message" -context MyDBContext2 
+--> Update-Database -context MyDBContext2
+
+6. To perform any CRUD operations in the table, you don't need to migrate changes using above commands.
+(see ./BasicCrud/Program.cs)
+
+7. Now to alter the column or schema, add a new migration using Add-Migration command 
+and then write the required alteration code in the 'up' and 'down' methods.
