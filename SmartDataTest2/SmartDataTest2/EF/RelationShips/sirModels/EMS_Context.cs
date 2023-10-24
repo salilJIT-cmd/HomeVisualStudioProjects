@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EFCore_Relations;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore_Relations.Context
+namespace SmartDataTest2.EF.RelationShips.sirModels
 {
     public class EMS_Context : DbContext
     {

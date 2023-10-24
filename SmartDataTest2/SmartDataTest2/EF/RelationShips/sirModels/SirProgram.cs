@@ -1,7 +1,7 @@
-﻿using EFCore_Relations.Context;
+﻿using EFCore_Relations;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore_Relations
+namespace SmartDataTest2.EF.RelationShips.sirModels
 {
     public class SirProgram
     {
@@ -55,7 +55,7 @@ namespace EFCore_Relations
             //        });
             //}
 
-            
+
         }
     }
 }

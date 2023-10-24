@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SmartDataTest2.Migrations.EF_RelationsDB
 {
     [DbContext(typeof(EF_RelationsDBContext))]
-    [Migration("20231023183832_initial_migration")]
-    partial class initial_migration
+    [Migration("20231024051633_Initial_migration")]
+    partial class Initial_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

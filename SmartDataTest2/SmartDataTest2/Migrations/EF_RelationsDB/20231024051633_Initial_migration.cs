@@ -5,7 +5,7 @@
 namespace SmartDataTest2.Migrations.EF_RelationsDB
 {
     /// <inheritdoc />
-    public partial class initial_migration : Migration
+    public partial class Initial_migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -12,41 +12,50 @@ namespace EF_Prac.RelationShips
     {
         public static void Main(string[] args)
         {
-
-            using(EF_RelationsDBContext context =  new EF_RelationsDBContext())
+            #region AddingDataInAllTables
+            using (EF_RelationsDBContext context =  new EF_RelationsDBContext())
             {
                 
-                OfficeFloor officeFloor = new OfficeFloor
-                {
-                    Floor_Name = "1st_floor"
-                };
-                context.Floors.Add(officeFloor);
-                context.SaveChanges();
+                //OfficeFloor officeFloor = new OfficeFloor
+                //{
+                //    Floor_Name = "2nd_floor"
+                //};
+                //context.Floors.Add(officeFloor);
+                //context.SaveChanges();
 
-                Employee emp = new Employee
-                {
-                    Name = "Salil",
-                    Tech = "MS",
-                    AvailCanteenService = true,
-                    OfficeFloorId = officeFloor.FloorId
+                //Employee emp = new Employee
+                //{
+                //    Name = "Yash",
+                //    Tech = "MEAN",
+                //    AvailCanteenService = true,
+                //    OfficeFloorId = 1
 
-                };
-                context.Employees.Add(emp);
-                context.SaveChanges();
+                //};
+                //context.Employees.Add(emp);
+                //context.SaveChanges();
 
-                SystemDetail sysDetails = new SystemDetail
-                {
-                    SystemName = "SDN-124",
-                    SystemIP = "172.0.1.22",
-                    SystemOS = "Windows",
-                    EmployeeId = emp.EmployeeId
-                };
-                context.SystemDetails.Add(sysDetails);
-                context.SaveChanges();
+                //SystemDetail sysDetails = new SystemDetail
+                //{
+                //    SystemName = "SDN-124",
+                //    SystemIP = "172.0.1.22",
+                //    SystemOS = "Windows",
+                //    EmployeeId = emp.EmployeeId
+                //};
+                //context.SystemDetails.Add(sysDetails);
+                //context.SaveChanges();
 
             }
+            #endregion
 
-            #region fetchingData
+            //FetchDataFromEmployees();'
+
+            FetchDataFromFloors();
+
+        }
+
+
+        public static void FetchDataFromEmployees()
+        {
             using (EF_RelationsDBContext context = new EF_RelationsDBContext())
             {
                 #region withJoins
@@ -75,6 +84,8 @@ namespace EF_Prac.RelationShips
                             floor_name = emp.OfficeFloor.Floor_Name
                         }
                     );
+
+                Console.WriteLine();
                 Console.WriteLine("Without Joins");
                 foreach (var item in queryWithoutJoin)
                 {
@@ -83,8 +94,32 @@ namespace EF_Prac.RelationShips
 
                 #endregion
             }
+        }
 
-            #endregion
+        public static void FetchDataFromFloors()
+        {
+            using (EF_RelationsDBContext context = new EF_RelationsDBContext())
+            {
+                var query = context.Floors
+                            .Where(floor => floor.FloorId == 1)
+                            .Select(floor => new
+                            {
+                                floor_id = floor.FloorId,
+                                floor_name = floor.Floor_Name,
+                                all_emps = floor.Employees
+                            });
+
+                foreach (var floor in query)
+                {
+                    Console.WriteLine($"FloorId {floor.floor_id} : {floor.floor_name}");
+
+                    foreach (var emp in floor.all_emps)
+                    {
+                        Console.WriteLine($"{emp.Name}");
+                    }
+                }
+            }
+
         }
     }
 }
